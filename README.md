@@ -1,2 +1,2 @@
-# esphome_custom_compent_VL53L1X_people_counter
+# Esphome Custom Component VL53L1X people counter
 Stil very work in progress and untested.
