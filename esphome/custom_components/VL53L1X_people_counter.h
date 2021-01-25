@@ -1,4 +1,11 @@
-/* https://esphome.io/components/sensor/custom.html */
+/*
+  Shout-out to
+  Tom Igoe's code found on https://forum.arduino.cc/index.php?topic=621855.0
+  who based on Sparkfun examples by Nathan Seidle
+  and ST examples
+
+  This custom component is based on:
+  https://esphome.io/components/sensor/custom.html */
 #include "esphome.h"
 #include <SparkFun_VL53L1X.h>
 
