@@ -8,7 +8,6 @@ esphome:
   board: nodemcuv2
   includes:
     - VL53L1X_people_counter.h
-# put SparkFun VL53L1X Arduino Library in your global libraries:
 # https://github.com/sparkfun/SparkFun_VL53L1X_Arduino_Library
   libraries:
     - "SparkFun VL53L1X Arduino Library"
