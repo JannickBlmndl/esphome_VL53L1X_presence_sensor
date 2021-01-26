@@ -1,4 +1,4 @@
-# Inspiration and recourse
+# Inspiration and resources
 
 https://www.st.com/content/ccc/resource/technical/document/user_manual/group1/fc/c3/0b/8c/0c/da/4c/8d/DM00600212/files/DM00600212.pdf/jcr:content/translations/en.DM00600212.pdf
 
