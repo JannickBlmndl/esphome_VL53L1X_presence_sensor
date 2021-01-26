@@ -1,9 +1,11 @@
 # Inspiration and resources
 
+
 https://www.st.com/content/ccc/resource/technical/document/user_manual/group1/fc/c3/0b/8c/0c/da/4c/8d/DM00600212/files/DM00600212.pdf/jcr:content/translations/en.DM00600212.pdf
 
 https://www.youtube.com/watch?v=c91Ve-g0J2U
 
+https://www.st.com/content/ccc/resource/technical/document/user_manual/group1/df/1d/a8/2e/35/28/47/64/DM00626942/files/DM00626942.pdf/jcr:content/translations/en.DM00626942.pdf
 
 https://forum.arduino.cc/index.php?topic=621855.0
 
