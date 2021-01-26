@@ -23,5 +23,5 @@ https://gist.github.com/mKeRix/4fc553574af0a2d8682734695160b859
 Sparkfun VL53L1X library
 https://github.com/sparkfun/SparkFun_VL53L1X_Arduino_Library
 
-Pololu VL53L1X library used by ESPHOME PR #1447 githu.com/esphome/esphome/pull/1447
+Pololu VL53L1X library used by ESPHOME PR #1447 https://github.com/esphome/esphome/pull/1447
 https://github.com/pololu/vl53l1x-arduino
