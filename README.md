@@ -6,4 +6,4 @@ The goal of this project to detect the presence of people in a room and also cou
 
 **Join on discord:** <br/>
 
-(https://discord.gg/65eBamz7AS)
+https://discord.gg/65eBamz7AS
