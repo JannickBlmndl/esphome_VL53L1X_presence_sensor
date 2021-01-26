@@ -4,8 +4,7 @@ https://www.youtube.com/watch?v=c91Ve-g0J2U
 
 https://forum.arduino.cc/index.php?topic=621855.0
 
-I managed to get much better results with these ROI(Region of Interest)/zone settings: Width=8, Height=8, opticalCentre[] = {167, 223}
-
+"I managed to get much better results with these ROI(Region of Interest)/zone settings: Width=8, Height=8, opticalCentre[] = {167, 223}"
 
 Example esphome custom component for d6t
 https://gist.github.com/mKeRix/4fc553574af0a2d8682734695160b859
