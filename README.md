@@ -1,4 +1,4 @@
-# Esphome Custom Component VL53L1X people counter
+# Esphome Custom Component VL53L1X people counter [![Discord Chat]](https://discord.gg/65eBamz7AS)
 Still very work in progress and untested.
 
 **Goal:** <br/>
