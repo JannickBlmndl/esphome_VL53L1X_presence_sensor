@@ -23,8 +23,8 @@ CONF_RETRY_BUDGET = 'retry_budget'
 CONF_OPTICAL_CENTER = 'optical_center'
 CONF_X_OPTICAL_CENTER = 'x_coordinate'
 CONF_Y_OPTICAL_CENTER = 'y_coordinate'
-CONF_ROI_WIDTH = 'roi_width'
 CONF_ROI_HEIGHT= 'roi_height'
+CONF_ROI_WIDTH = 'roi_width'
 
 CONFIG_SCHEMA = sensor.sensor_schema(UNIT_METER, ICON_ARROW_EXPAND_VERTICAL, 2).extend({
     cv.GenerateID(): cv.declare_id(VL53L1XSensor),
