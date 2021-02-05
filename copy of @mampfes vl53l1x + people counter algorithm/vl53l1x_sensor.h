@@ -1,0 +1,58 @@
+#pragma once
+
+#include "esphome/core/component.h"
+#include "esphome/components/sensor/sensor.h"
+#include "esphome/components/i2c/i2c.h"
+
+class VL53L1X;
+
+namespace esphome {
+namespace vl53l1x {
+
+enum DistanceMode { SHORT, MEDIUM, LONG };
+
+class VL53L1XSensor : public sensor::Sensor, public PollingComponent, public i2c::I2CDevice {
+ public:
+  VL53L1XSensor();
+  
+  void setup() override;
+
+  void dump_config() override;
+  float get_setup_priority() const override { return setup_priority::DATA; }
+  void update() override;
+
+  void loop() override;
+
+  void set_timing_budget(uint32_t budget) { timing_budget_ = budget; }
+  void set_distance_mode(DistanceMode mode) { distance_mode_ = mode; }
+
+  void set_i2c_parent(i2c::I2CComponent* parent);
+  void set_i2c_address(uint8_t address);
+
+  void set_retry_budget(uint8_t budget) { retry_budget_ = budget; }
+  
+  // OPTICAL CENTER + ROI
+  // Set aas 1 variable met 2 waarde {x, y}
+  // void set_optical_center(uint8_t x_coordinate, uint8_t y_coordinate) { x_optical_center_ = x_coordinate; , y_optical_center_ = y_coordinate; }
+
+  // void set_roi_height(uint8_t height) { roi_height_ = height; }
+  // void set_roi_width(uint8_t width) { roi_width_ = width; }
+  //
+  
+ protected:
+  VL53L1X* vl53l1x_{nullptr};
+  DistanceMode distance_mode_{DistanceMode::LONG};
+  uint32_t timing_budget_{50000};
+  uint8_t retry_budget_{5};
+  uint8_t retry_count_{0};
+ 
+ 
+  //uint8_t optical_center
+
+  uint8_t roi_height_{16};
+  uint8_t roi_width_{7};
+  
+};
+
+}  // namespace vl53l1x
+}  // namespace esphome
