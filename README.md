@@ -10,10 +10,10 @@ The goal of this project to detect the presence of people in a room and also cou
 | Making this pathway | February 8| February 8 |☒
 | Delivery of the VL53L1X time of flight sensors | 9 - 10 February | |  ☐
 | Checking if hardware is nondefective | | |  ☐
-| Dry testing using [Andrea Fox's arduino sketch] (https://github.com/Andrea-Fox/peopleCounter) |  | |  ☐
-| Rough "It'll either work or explode"_ ESPHome integration as a custom component | | |  ☐
+| Dry testing using <a href="https://github.com/Andrea-Fox/peopleCounter">Andrea Fox's Arduino IDE sketch</a> [] |  | |  ☐
+| Rough _"It'll either work or explode"_ ESPHome integration as a custom component | | |  ☐
 | Clean ESPHome integration as a component following the code guidelines etc.| | | ☐
-| Get compenent software merged as official ESPHome component|  | |  ☐
+| Get compenent software merged as official ESPHome component| | |  ☐
 
 **Join on discord:** <br/>
 
