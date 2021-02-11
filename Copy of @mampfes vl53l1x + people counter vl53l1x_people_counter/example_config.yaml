@@ -1,5 +1,5 @@
 substitutions:
-  device_name: "time_of_flight"
+  device_name: "people_counter"
 
 esphome:
   name: ${device_name}
