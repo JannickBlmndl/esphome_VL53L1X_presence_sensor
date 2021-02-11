@@ -4,7 +4,7 @@ Still very work in progress and untested.
 ### Goal:<br/>
 The goal of this project to detect the presence of people in a room and also count how many there are present in the room. To, eventually, with that information toggle the state of the light(s) and do other automation 'stuff'.
 
-### Pathway: <br/>
+### Pathway and logbook: <br/>
 | Description     |  Expected date  | Actual date  | ☒ /<br/> ☐   | Result commentary |
 |----------------| ---------------|------------|------------|------------|
 | Making this pathway | February 8| February 8 |☒ | 
@@ -13,8 +13,8 @@ The goal of this project to detect the presence of people in a room and also cou
 | Dry testing using <a href="https://github.com/Andrea-Fox/peopleCounter">Andrea Fox's Arduino IDE sketch</a>| February 10 | February 10 |  ☒ | 
 | Testing distance sensor esphome component <a href="https://github.com/esphome/esphome/pull/1447">PR #1447 </a>| February 10 | February 10 |  ☒ | See <a href="https://github.com/esphome/esphome/pull/1447#issuecomment-777426587">issue comment</a>
 | Rough _"It'll either work or explode"_ people counting in ESPHome as a custom component | February 11| Never | - | Currently this doesn't look like the way to go. *Deprecated*| 
-| Clean ESPHome integration as a component following the code guidelines etc.| | | ☐ |
-| Get the software for the component merged to an official ESPHome component| | |  ☐ |
+| Clean ESPHome integration as a component following the code guidelines etc.|?|?| ☐ |
+| Get the software for the component merged to an official ESPHome component| ?| ?|  ☐ |
 
 ### Join on discord:<br/>
 
