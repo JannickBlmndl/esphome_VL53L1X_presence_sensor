@@ -16,50 +16,54 @@ vl53l1x_distance_modes = {
     'LONG': vl53l1x_distance_mode.LONG,
 }
 
-CONF_DISTANCE_MODE = "distance_mode"
+CONF_DISTANCE_MODE = 'distance_mode'
 CONF_TIMING_BUDGET = 'timing_budget'
 CONF_RETRY_BUDGET = 'retry_budget'
 
 CONF_OPTICAL_CENTER = 'optical_center'
-CONF_X_OPTICAL_CENTER = 'x_coordinate'
-CONF_Y_OPTICAL_CENTER = 'y_coordinate'
 CONF_ROI_HEIGHT= 'roi_height'
 CONF_ROI_WIDTH = 'roi_width'
+CONF_DIST_THRESHOLD = 'distance_threshold'
 
 CONFIG_SCHEMA = sensor.sensor_schema(UNIT_METER, ICON_ARROW_EXPAND_VERTICAL, 2).extend({
     cv.GenerateID(): cv.declare_id(VL53L1XSensor),
-    cv.Optional(CONF_DISTANCE_MODE, default="LONG"): cv.enum(vl53l1x_distance_modes, upper=True),
+    cv.Optional(CONF_DISTANCE_MODE, default='LONG'): cv.enum(vl53l1x_distance_modes, upper=True),
     cv.Optional(CONF_TIMING_BUDGET, default='50ms'):
         cv.All(cv.positive_time_period_microseconds,
                cv.Range(min=TimePeriod(microseconds=20000),
                         max=TimePeriod(microseconds=1100000))),
-    cv.Optional(CONF_RETRY_BUDGET, default=5): cv.int_range(min=0, max=255),
-   
-   
-    cv.Optional(CONF_OPTICAL_CENTER): cv.Schema({
-        cv.Required(CONF_X_OPTICAL_CENTER, default=159): cv.int_range(min=0, max=255),
-        cv.Required(CONF_Y_OPTICAL_CENTER, default=231)): cv.int_range(min=0, max=255),
-    }),
+    cv.Optional(CONF_RETRY_BUDGET, default=1): cv.int_range(min=0, max=255),
 
-    cv.Optional(CONF_ROI_HEIGHT, default=16): cv.int_range(min=0, max=255),
-    cv.Optional(CONF_ROI_WIDTH, default=7): cv.int_range(min=0, max=255),
-    
-}).extend(cv.polling_component_schema('60s')).extend(i2c.i2c_device_schema(0x29))
+    cv.Optional(CONF_OPTICAL_CENTER, default=[239, 175]): cv.All([cv.int_range(min=0, max=255)], cv.Length(min=2, max=2)),
 
+    cv.Optional(CONF_ROI_HEIGHT, default=5): cv.int_range(min=0, max=255),
+    cv.Optional(CONF_ROI_WIDTH, default=5): cv.int_range(min=0, max=255),
+
+    cv.Optional(CONF_DIST_THRESHOLD, default=[1500, 1500]): cv.All([cv.int_range(min=0, max=0xFFFF,
+                                                            max_included=False)], cv.Length(min=2, max=2)),
+
+}).extend(cv.polling_component_schema('100ms')).extend(i2c.i2c_device_schema(0x29))
+
+SETTERS = {
+
+  CONF_DISTANCE_MODE = 'set_distance_mode',
+  CONF_TIMING_BUDGET = 'set_timing_budget',
+  CONF_RETRY_BUDGET = 'set_retry_budget',
+  CONF_OPTICAL_CENTER = 'set_optical_center',
+  CONF_ROI_HEIGHT= 'set_roi_height',
+  CONF_ROI_WIDTH = 'set_roi_width',
+  CONF_DIST_THRESHOLD = 'set_distance_threshold',
+
+}
 
 def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
     yield cg.register_component(var, config)
 
-    cg.add(var.set_distance_mode(config[CONF_DISTANCE_MODE]))
-    cg.add(var.set_timing_budget(config[CONF_TIMING_BUDGET]))
-    cg.add(var.set_retry_budget(config[CONF_RETRY_BUDGET]))
-    
-    optical_center_config = config[CONF_OPTICAL_CENTER]
-    cg.add(var.set_optical_center(optical_center_config[CONF_X_OPTICAL_CENTER], optical_center_config[CONF_Y_OPTICAL_CENTER]))
-
-    cg.add(var.set_roi_height(config[CONF_ROI_HEIGHT]))
-    cg.add(var.set_roi_width(config[CONF_ROI_WIDTH]))
+    for key, setter in SETTERS.items():
+        if key in config:
+            cg.add(getattr(var, setter)(config[key]))
 
     yield sensor.register_sensor(var, config)
     yield i2c.register_i2c_device(var, config)
+ 

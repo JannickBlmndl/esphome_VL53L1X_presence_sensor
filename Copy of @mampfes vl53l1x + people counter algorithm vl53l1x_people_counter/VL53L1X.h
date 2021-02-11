@@ -4,7 +4,7 @@
 #include <Wire.h>
 
 namespace esphome {
-namespace vl53l1x {
+namespace vl53l1x_people_counter {
 
 class VL53L1X {
  public:
@@ -1292,6 +1292,8 @@ class VL53L1X {
   bool set_measurement_timing_budget(uint32_t budget_us);
   uint32_t get_measurement_timing_budget();
 
+  bool set_user_roi(uint8_t top_left_x, uint8_t top_left_y, uint8_t bot_right_x, uint8_t bot_right_y);
+
   void start_continuous(uint32_t period_ms);
   void stop_continuous();
   uint16_t read(bool blocking = true);
@@ -1392,5 +1394,5 @@ class VL53L1X {
   float count_rate_fixed_to_float_(uint16_t count_rate_fixed) { return (float) count_rate_fixed / (1 << 7); }
 };
 
-}  // namespace vl53l1x
+}  // namespace vl53l1x_people_counter
 }  // namespace esphome

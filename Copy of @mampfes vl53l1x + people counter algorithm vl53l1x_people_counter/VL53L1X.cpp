@@ -6,7 +6,7 @@
 #include "VL53L1X.h"
 
 namespace esphome {
-namespace vl53l1x {
+namespace vl53l1x_people_counter {
 
 // Constructors ////////////////////////////////////////////////////////////////
 
@@ -390,6 +390,39 @@ uint32_t VL53L1X::get_measurement_timing_budget() {
   return 2 * range_config_timeout_us + TIMING_GUARD;
 }
 
+// Set user region of interest
+bool VL53L1X::set_user_roi(uint8_t top_left_x, uint8_t top_left_y, uint8_t bot_right_x, uint8_t bot_right_y) {
+  if ((top_left_x > 15) || (top_left_y > 15) || (bot_right_x > 15) || (bot_right_y > 15))
+    return false;
+
+  if ((top_left_x > bot_right_x) || (top_left_y < bot_right_y))
+    return false;
+
+  uint8_t x_centre = (bot_right_x + top_left_x + 1) / 2;
+  uint8_t y_centre = (top_left_y + bot_right_y + 1) / 2;
+  uint8_t width = (bot_right_x - top_left_x);
+  uint8_t height = (top_left_y - bot_right_y);
+
+  if ((width < 3) || (height < 3))
+    return false;
+
+  // Encodes the input array(row,col) location as SPAD number.
+  uint8_t user_roi_centre_spad;
+  if (y_centre > 7) {
+    user_roi_centre_spad = 128 + (x_centre << 3) + (15 - y_centre);
+  } else {
+    user_roi_centre_spad = ((15 - x_centre) << 3) + y_centre;
+  }
+
+  uint8_t user_roi_requested_global_xy_size = (height << 4) + width;
+  ;
+
+  write_reg(ROI_CONFIG__USER_ROI_CENTRE_SPAD, user_roi_centre_spad);
+  write_reg(ROI_CONFIG__USER_ROI_REQUESTED_GLOBAL_XY_SIZE, user_roi_requested_global_xy_size);
+
+  return true;
+}
+
 // Start continuous ranging measurements, with the given inter-measurement
 // period in milliseconds determining how often the sensor takes a measurement.
 void VL53L1X::start_continuous(uint32_t period_ms) {
@@ -768,5 +801,5 @@ uint32_t VL53L1X::calc_macro_period_(uint8_t vcsel_period) {
   return macro_period_us;
 }
 
-}  // namespace vl53l1x
+}  // namespace vl53l1x_people_counter
 }  // namespace esphome

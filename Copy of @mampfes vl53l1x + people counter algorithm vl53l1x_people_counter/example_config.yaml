@@ -1,0 +1,55 @@
+substitutions:
+  device_name: "time_of_flight"
+
+esphome:
+  name: ${device_name}
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: !secret wifi_ssdi
+  password:  !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "${device_name} Fallback Hotspot"
+    password: "!secret ota_pass"
+  
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+i2c:
+  scan: True
+  sda: 4
+  scl: 5 
+
+
+# binary_sensor:
+#   - platform: status
+#     name: "${device_name} Status"
+
+sensor: 
+  - platform: vl53l1x
+    name: "VL53L1x People Counter"
+    update_interval: 5s
+    distance_mode: LONG
+    timing_budget: 50ms
+    address: 0x29
+    optical_center: [10, 10]
+    roi_height: 5
+    roi_width: 5
+    distance_threshold: [1500, 1500]
+#   - platform: wifi_signal
+#     name: "${device_name} WiFi Signal"
+
+# switch:
+#   - platform: restart
+#     id: reboot
+#     name: "Restart ${device_name}"
