@@ -12,7 +12,7 @@ The goal of this project to detect the presence of people in a room and also cou
 | Checking if hardware is nondefective | February 10| February 10 |  ☒ | The I2C-device address differed from the SparkFun and Polulu boards. This meant that the address was needed to be set before the initalisation of the sensor. 
 | Dry testing using <a href="https://github.com/Andrea-Fox/peopleCounter">Andrea Fox's Arduino IDE sketch</a>| February 10 | February 10 |  ☒ | 
 | Testing distance sensor esphome component <a href="https://github.com/esphome/esphome/pull/1447">PR #1447 </a>| February 10 | February 10 |  ☒ | See <a href="https://github.com/esphome/esphome/pull/1447#issuecomment-777426587">issue comment</a>
-| Rough _"It'll either work or explode"_ people counting in ESPHome as a custom component | | |  ☐ | 
+| Rough _"It'll either work or explode"_ people counting in ESPHome as a custom component | 11-02-201| Never | - | Currently this doesn't look like the way to go. *Deprecated*| 
 | Clean ESPHome integration as a component following the code guidelines etc.| | | ☐ |
 | Get the software for the component merged to an official ESPHome component| | |  ☐ |
 
