@@ -1,0 +1,3 @@
+Sparkfun vl53l1x arduino library https://learn.sparkfun.com/tutorials/qwiic-distance-sensor-vl53l1x-hookup-guide/arduino-library-overview
+
+ST vl53l1x API user manual https://www.st.com/resource/en/user_manual/dm00474730-vl53l1x-api-user-manual-stmicroelectronics.pdf

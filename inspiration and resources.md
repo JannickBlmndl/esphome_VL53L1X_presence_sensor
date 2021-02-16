@@ -18,9 +18,6 @@ https://github.com/Andrea-Fox/peopleCounter
 Esphome official component for the vl53l0x as distance sensor
 https://github.com/esphome/esphome/tree/dev/esphome/components/vl53l0x
 
-Example esphome custom component for d6t
-https://gist.github.com/mKeRix/4fc553574af0a2d8682734695160b859
-
 **Libraries** <br/>
 Sparkfun VL53L1X library
 https://github.com/sparkfun/SparkFun_VL53L1X_Arduino_Library

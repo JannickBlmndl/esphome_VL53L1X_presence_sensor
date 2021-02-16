@@ -42,6 +42,9 @@
 
 
 /* Includes ------------------------------------------------------------------*/
+#include "Arduino.h"
+#include "Wire.h"
+#include "RangeSensor.h"
 #include "vl53l1_error_codes.h"
 
 

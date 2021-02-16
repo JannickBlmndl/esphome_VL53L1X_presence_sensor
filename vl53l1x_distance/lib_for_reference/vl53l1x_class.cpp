@@ -36,7 +36,9 @@
 */
 
 /* Includes */
-// #include "vl53l1x_class.h"
+#include <stdlib.h>
+#include "Arduino.h"
+#include "vl53l1x_class.h"
 
 #define ALGO__PART_TO_PART_RANGE_OFFSET_MM 0x001E
 #define MM_CONFIG__INNER_OFFSET_MM 0x0020

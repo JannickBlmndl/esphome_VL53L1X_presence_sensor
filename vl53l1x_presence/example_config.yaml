@@ -42,7 +42,7 @@ sensor:
     distance_mode: LONG
     timing_budget: 50ms
     address: 0x29
-    optical_center: [10, 10]
+    optical_center: [175, 239]
     roi_height: 5
     roi_width: 5
     distance_threshold: [1500, 1500]
