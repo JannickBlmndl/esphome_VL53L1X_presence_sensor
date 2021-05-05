@@ -1,2 +1,2 @@
-# esphome_custom_compent_VL53L1X_people_counter
+# ESPHome VL53L1X presence sensor
 No main branch yet.
