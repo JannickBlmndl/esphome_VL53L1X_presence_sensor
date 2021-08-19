@@ -12,7 +12,7 @@ The goal of this project is to detect the presence of people in a room and also 
 | Testing distance sensor esphome component <a href="https://github.com/esphome/esphome/pull/1447">PR #1447 </a>| February 10 | February 10 |  ☒ | See <a href="https://github.com/esphome/esphome/pull/1447#issuecomment-777426587">issue comment</a>
 | |  | |  |
 
-**ESPHome development**
+### ESPHome development <br/>
 <a href="https://github.com/esphome/esphome/pull/1539 ">Draft PR #1539 </a>
 
 **Steps to an ESPHome VL53L1X presence component**
