@@ -1,7 +1,7 @@
 # ESPHome VL53L1X presence sensor
 
 ### Goal:<br/>
-The goal of this project to detect the presence of people in a room and also count how many there are present in the room. To, eventually, with that information toggle the state of the light(s) and do other automation 'stuff'.
+The goal of this project is to detect the presence of people in a room and also count how many there are present in the room. To, eventually, with that information toggle the state of the light(s) and do other automation 'stuff'.
 
 ### Pathway and logbook: <br/>
 | Description     |  Expected date  | Actual date  | ☒ /<br/> ☐   | Result commentary |
