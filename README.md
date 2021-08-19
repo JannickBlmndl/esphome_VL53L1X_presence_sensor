@@ -12,11 +12,15 @@ The goal of this project is to detect the presence of people in a room and also 
 | Testing distance sensor esphome component <a href="https://github.com/esphome/esphome/pull/1447">PR #1447 </a>| February 10 | February 10 |  ☒ | See <a href="https://github.com/esphome/esphome/pull/1447#issuecomment-777426587">issue comment</a>
 | |  | |  |
 
+**ESPHome development**
+<a href="https://github.com/esphome/esphome/pull/1539 ">Draft PR #1539
+
 **Steps to an ESPHome VL53L1X presence component**
 
 - pull the plain distance measuring code out from the libraries into esphome c++ (vl53l1x_distance)
 - add possibilty to use and switch the ROI zones (vl53l1x_presence)
 - add algorithm for presence and direction (vl53l1x_presence)
+
 ### Join on discord:<br/>
 
 https://discord.gg/65eBamz7AS
