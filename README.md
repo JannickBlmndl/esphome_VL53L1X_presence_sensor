@@ -13,7 +13,7 @@ The goal of this project is to detect the presence of people in a room and also 
 | |  | |  |
 
 **ESPHome development**
-<a href="https://github.com/esphome/esphome/pull/1539 ">Draft PR #1539
+<a href="https://github.com/esphome/esphome/pull/1539 ">Draft PR #1539 </a>
 
 **Steps to an ESPHome VL53L1X presence component**
 
