@@ -17,9 +17,7 @@ The goal of this project is to detect the presence of people in a room and also 
 
 **Steps to an ESPHome VL53L1X presence component**
 
-- pull the plain distance measuring code out from the libraries into esphome c++ (vl53l1x_distance)
-- add possibilty to use and switch the ROI zones (vl53l1x_presence)
-- add algorithm for presence and direction (vl53l1x_presence)
+- https://github.com/Lyr3x/Roode has already done what I've planned / tried to do.
 
 ### Join on discord:<br/>
 
